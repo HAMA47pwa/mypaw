@@ -1,20 +1,12 @@
 {
-  "name": "My PWA App",
-  "short_name": "MyPWA",
-  "start_url": "./index.html",
+  "name": "My Banking – Personal (Unofficial)",
+  "short_name": "MyBanking",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0078d7",
+  "theme_color": "#c63b2f",
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
   ]
 }

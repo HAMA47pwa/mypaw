@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My PWA App</title>
-  <link rel="manifest" href="manifest.json">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Banking – Personal (Unofficial)</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#c63b2f" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>こんにちは！これは私のPWAです 😊</h1>
-  <p>オフラインでも動くようになります。</p>
+  <header class="appbar">
+    <h1 class="brand">My Banking</h1>
+    <button class="action" aria-label="通知">🔔</button>
+  </header>
+
+  <main class="container">
+    <section class="card balance">
+      <div class="label">現在の残高</div>
+      <div class="amount">¥ 1,234,567</div>
+      <button class="primary" id="addMoney">入金する</button>
+    </section>
+
+    <section class="card actions">
+      <button class="ghost">振込</button>
+      <button class="ghost">履歴</button>
+      <button class="ghost">カード</button>
+      <button class="ghost">設定</button>
+    </section>
+
+    <section class="card history">
+      <h2>最近の明細</h2>
+      <ul>
+        <li><span>コンビニ</span><time>今日</time><strong>-¥520</strong></li>
+        <li><span>給与</span><time>昨日</time><strong class="plus">+¥250,000</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="bottomnav" aria-label="主要メニュー">
+    <a href="#" class="active">ホーム</a>
+    <a href="#">送金</a>
+    <a href="#">カード</a>
+    <a href="#">設定</a>
+  </nav>
 
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js');
-      });
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
     }
+    document.getElementById('addMoney')?.addEventListener('click', () => alert('これはデモです'));
   </script>
 </body>
 </html>
